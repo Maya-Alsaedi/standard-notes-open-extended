@@ -3,6 +3,8 @@ import zipfile
 import json
 import requests
 import shutil
+import urllib.parse import urljoin
+import getpass
 
 from io import BytesIO
 from urllib.parse import urljoin, urlparse
@@ -150,4 +152,14 @@ if __name__ == '__main__':
     target_dir = 'public'
     domain = get_domain(target_dir)
     
-    process_extensions(source_dir, target_dir, domain)
+   
+
+    # adding a password
+    correct_password = "1234"
+    entered_password =getpass.getpass("Enter password:")
+    if entered_password == correct_password :
+
+ process_extensions(source_dir, target_dir, domain)
+
+else:
+print("Wrong password")
